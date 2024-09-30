@@ -1,0 +1,29 @@
+name: Mobile Tests
+
+on:
+  push:
+    branches: ["main", "mobile-dev"]
+  pull_request:
+    branches: ["main", "mobile-dev"]
+
+jobs:
+  mobile-tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install mobile dependencies
+        run: npm install --prefix mobile
+
+      - name: Run mobile tests
+        run: npm test --prefix mobile --if-present

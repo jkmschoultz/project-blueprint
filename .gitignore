@@ -1,0 +1,37 @@
+# Node.js dependencies
+node_modules/
+package-lock.json
+npm-debug.log
+
+# Environment files
+.env
+
+# Build output
+/build
+/dist
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Frontend build artifacts
+frontend/build/
+frontend/node_modules/
+
+# Backend build artifacts
+backend/node_modules/
+
+# Database files
+*.sqlite
+
+# Miscellaneous
+*.tmp
+*.swp
+*.swo

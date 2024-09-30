@@ -1,0 +1,26 @@
+{
+  "name": "river",
+  "version": "1.0.0",
+  "description": "A repo for the river app, made for streamers looking to grow",
+  "scripts": {
+    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\" \"npm run start:mobile\"",
+    "start:backend": "npm --prefix ./backend run dev",
+    "start:frontend": "npm --prefix ./frontend run dev",
+    "start:mobile": "npm --prefix ./mobile run web",
+    "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend && npm install --prefix mobile",
+    "install:backend": "npm install --prefix backend",
+    "install:frontend": "npm install --prefix frontend",
+    "install:mobile": "npm install --prefix mobile",
+    "sync": "npm --prefix ./backend run sync",
+    "setup:dev": "npm run install:all && npm run sync",
+    "build:frontend": "npm --prefix ./frontend run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:backend": "npm --prefix ./backend run test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
